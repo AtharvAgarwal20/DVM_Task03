@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background-color: #0CEE72;
+}
+
+body {
+    font-family: RailPark, Arial, Helvetica, sans-serif;
+}
+
+
+/* NAVBAR */
+.navbar {
+    z-index: 100;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    position: fixed;
+    background-color: transparent;
+    max-width: 100%;
+    padding: 0px 4.8rem;
+    transition: transform 300ms ease-in-out;
+}
+
+.navbar .navContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .navGrid {
+    flex-basis: 83.33%;
+    max-width: 83.33%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
+    padding: 1.75rem 0px 2.5rem;
+}
+
+.navbar .navGrid #donateBtn {
+    border: 0.1rem solid #131313;
+    margin: auto 0px;
+    border-radius: 4.8rem;
+    line-height: 2.4rem;
+    padding: 0.3rem 2.5rem;
+    width: min-content;
+    margin-left: auto;
+}
+
+.navbar .navGrid .ham {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+    /* appearance: none; */
+    width: 3rem;
+    height: 1.2rem;
+    margin: auto 0px;
+}
+
+.navbar .navGrid .ham div {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #131313;
+}
+
+.navbar .navGrid .ham:hover div {
+    transition: all 150ms ease-in-out;
+    background-color: #04C75C;
+}
+
+.navbar .navGrid .ham:hover {
+    cursor: pointer;
+}
+
+.navbar .mainLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    font-family: RailPark, Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    color: black;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: all 150ms ease-in-out;
+}
+
+.navbar a:hover {
+    color: #04C75C;
+    cursor: pointer;
+}
+
+.navbar #donateBtn {
+    transition: all 150ms ease-in-out;
+}
+
+.navbar #donateBtn:hover {
+    background-color: #04C75C;
+    border: 0.1rem solid #04C75C;
+    color: #fff;
+}
+
+.navbar a svg {
+    transition: all 150ms ease-in-out;
+}
+
+.navbar a svg:hover {
+    fill: #04C75C;
+    cursor: pointer;
+}
+
+
+/* CONTENT BODY */
+main {
+    position: relative;
+    top: 135px;
+    width: 100%;
+    height: 10000px;
+}
+
+main .heading {
+    font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    font-size: 9.30477748691vw;
+    left: 180px;
+    position: fixed;
+}
+
+main .gallery {
+    position: fixed;
+    top: 300px;
+    z-index: 99;
+}
+
+/* CAROUSEL */
+main .carousel {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 4fr 1fr;
+}
+
+main .carousel button {
+    background-color: transparent;
+    border: none;
+}
+
+main .carousel h3 {
+    margin-top: auto;
+    padding-right: 10px;
+    font-size: 3.16251963351vw;
+}
+
+main .carousel h3 a {
+    text-decoration: none;
+    color: #04C75C;
+    font-size: 30px;
+    transition: color 150ms ease-in-out;
+}
+
+main .carousel h3 a:hover {
+    color: #131313;
+}
+
+main .carousel img {
+    width: 100%;
+}
+
+main .carousel button svg {
+    transition: all 150ms linear;
+}
+
+main .carousel #carouselNext svg:hover {
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+main .carousel #carouselBack svg {
+    transform: rotate(180deg);
+}
+
+main .carousel #carouselBack svg:hover {
+    cursor: pointer;
+    transform: rotate(180deg) translateX(5px);
+}

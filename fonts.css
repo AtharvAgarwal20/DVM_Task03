@@ -1,0 +1,47 @@
+@font-face {
+    font-family: RailPark;
+    src: url(fonts/railpark.woff2);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: RailPark;
+    src: url(fonts/railpark2.woff2);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: RailPark;
+    src: url(fonts/railpark3.woff2);
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-Black.woff);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-Normal.woff);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-Regular.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-SemiBold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-UltraBold.woff);
+    font-weight: bolder;
+}
