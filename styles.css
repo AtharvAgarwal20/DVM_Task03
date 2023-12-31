@@ -138,8 +138,14 @@ main .heading {
 
 main .gallery {
     position: fixed;
-    top: 300px;
+    top: 19.5312506315vw;
     z-index: 99;
+}
+
+@media(max-width:1260px) {
+    main .gallery {
+        top: 26vw;
+    }
 }
 
 /* CAROUSEL */
@@ -152,10 +158,14 @@ main .carousel {
 main .carousel button {
     background-color: transparent;
     border: none;
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
 }
 
 main .carousel h3 {
     margin-top: auto;
+    margin-bottom: 32px;
     padding-right: 10px;
     font-size: 3.16251963351vw;
 }
@@ -171,8 +181,26 @@ main .carousel h3 a:hover {
     color: #131313;
 }
 
-main .carousel img {
+main .carousel #headingImg {
     width: 100%;
+}
+
+main .carousel .imgFadeOut {
+    transform-origin: 100% 250%;
+    transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
+    transform: rotate(-20deg);
+    opacity: 0;
+}
+
+main .carousel .imgFadeIn {
+    transform-origin: 0% -150%;
+    transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
+    transform: rotate(0deg) !important;
+    opacity: 1;
+}
+
+main .carousel .carouselHeading {
+    transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
 }
 
 main .carousel button svg {
