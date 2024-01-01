@@ -186,6 +186,7 @@ body {
 .hamContent {
     display: none;
     height: fit-content;
+    z-index: 96;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -193,6 +194,9 @@ body {
 .hamContent div {
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 150ms linear, transform 150ms linear;
 }
 
 .hamContent div a {
@@ -240,7 +244,7 @@ body {
 }
 
 .hamContent div:nth-child(4) {
-    margin-top: 3.8rem;
+    margin-top: 4.2rem;
 }
 
 .hamContent div:first-of-type a:hover {
@@ -260,12 +264,43 @@ body {
     justify-content: space-between;
 }
 
-.hamContent div:nth-of-type(4) a {
+.hamContent div:nth-of-type(4) a:hover {
+    color: #04C75C;
+}
+
+.hamContent div:nth-of-type(4) a,
+.hamContent div:nth-of-type(4) p {
     font-size: 1.953125vw;
+    margin-top: 0px;
 }
 
 .hamContent div:nth-of-type(4) h2 {
     font-size: 1rem;
+    margin-bottom: 45px;
+}
+
+.hamContent div:nth-of-type(4) a svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    transition: fill 150ms;
+}
+
+#instagram:hover svg {
+    fill: #F00075;
+}
+
+#twitter:hover svg {
+    fill: #1DA1F2;
+}
+
+#facebook:hover svg {
+    fill: #4267B2;
+}
+
+#facebook,
+#twitter {
+    padding-left: 16px;
 }
 
 

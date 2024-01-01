@@ -2,6 +2,10 @@ const body = document.querySelector('body')
 const navbar = document.querySelector('.navbar')
 const ham = document.querySelector('.ham')
 const hamContent = document.querySelector('.hamContent')
+const contentFirst = document.querySelector('.hamContent div:nth-of-type(1)')
+const contentSecond = document.querySelector('.hamContent div:nth-of-type(2)')
+const contentThird = document.querySelector('.hamContent div:nth-of-type(3)')
+const contentFourth = document.querySelector('.hamContent div:nth-of-type(4)')
 const navSearch = document.querySelector('.navSearch')
 const navLinks = document.querySelector('.mainLinks')
 const donateBtn = document.querySelector('#donateBtn')
@@ -54,6 +58,22 @@ function hamburgerMenuHelper() {
             navSearch.style.opacity = '1'
         }, 150)
         hamContent.style.display = 'grid'
+        setTimeout(() => {
+            contentFirst.style.opacity = '1'
+            contentFirst.style.transform = 'translateY(0px)'
+        }, 200)
+        setTimeout(() => {
+            contentSecond.style.opacity = '1'
+            contentSecond.style.transform = 'translateY(0px)'
+        }, 250)
+        setTimeout(() => {
+            contentThird.style.opacity = '1'
+            contentThird.style.transform = 'translateY(0px)'
+        }, 300)
+        setTimeout(() => {
+            contentFourth.style.opacity = '1'
+            contentFourth.style.transform = 'translateY(0px)'
+        }, 350)
         j += 1
     }
     else if (j == 1) {
@@ -65,7 +85,10 @@ function hamburgerMenuHelper() {
         navSearch.removeAttribute('style')
         hamContent.removeAttribute('style')
         navbar.removeAttribute('style')
-        // navbar.style.borderBottom = 'none'
+        contentFirst.removeAttribute('style')
+        contentSecond.removeAttribute('style')
+        contentThird.removeAttribute('style')
+        contentFourth.removeAttribute('style')
         hamUpper.classList.remove('hamCross')
         hamLower.classList.remove('hamCross')
         donateBtn.id = 'donateBtn'
