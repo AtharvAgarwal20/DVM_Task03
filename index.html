@@ -19,8 +19,16 @@
                     <div class="upperLine"></div>
                     <div class="lowerLine"></div>
                 </button>
+                <form class="navSearch" action="https://www.therailpark.org/search">
+                    <svg width="28" height="29" viewBox="0 0 28 29" fill="none" stroke="#131313"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11.5133" cy="11.5133" r="10.5133"></circle>
+                        <line x1="18.6956" y1="19.2251" x2="27.3536" y2="27.883"></line>
+                    </svg>
+                    <input type="text" name="query" placeholder="Search">
+                </form>
                 <div class="mainLinks">
-                    <a href="#">Visit</a>
+                    <a href="https://www.therailpark.org/visit/">Visit</a>
                     <a href="#" class="logo"><svg width="50" height="55" viewBox="0 0 50 55"
                             xmlns="http://www.w3.org/2000/svg" class="Logo__LogoWrapper-sc-82qk6d-0 cFSmHA">
                             <title>Rail Park Logo</title>
@@ -28,12 +36,52 @@
                                 d="M50 24.1047C50 32.5791 46.255 38.7366 41.06 42.4337L37.8017 32.9445L41.7965 32.9511L40.2512 29.3159L36.5555 29.3127L33.6029 20.7209L36.5983 20.7241L35.362 17.8167L32.6034 17.8134L30.2788 11.0424L32.4818 11.0457L31.6565 9.10739L29.6114 9.10412L26.4977 0.0391575C32.1825 0.300208 37.2986 2.01661 41.0732 4.66301C46.3602 8.17413 50 15.5586 50 24.1047ZM9.35425 29.2768L13.0664 29.28L16.1011 20.6947L13.017 20.6915L14.2566 17.7873L17.1303 17.7906L19.5239 11.0261L17.1467 11.0228L17.972 9.08781L20.2078 9.09107L23.4103 0.0391575C13.6779 0.512311 4.82015 5.33521 1.50589 14.906C0.48333 17.8558 0 20.9852 0 24.1047C0 32.3506 3.52798 38.4592 8.50266 42.1824L11.7808 32.9119L7.80562 32.9054L9.35425 29.2768ZM16.7883 29.2866L32.8697 29.3061L30.5583 20.7143L19.1787 20.7013L16.7883 29.2866ZM27.4282 9.10412L24.9786 0C24.9655 0 24.949 0 24.9359 0L22.4042 9.09433L27.4282 9.10412ZM21.8682 11.0326L19.9842 17.8004L29.7725 17.8134L27.9509 11.0424L21.8682 11.0326ZM15.7789 32.9184L12.5436 44.5482C13.6286 45.0344 14.7465 45.4292 15.8841 45.7262C17.3802 46.1178 20.1946 46.3429 23.213 46.4114C22.9664 50.5165 22.654 54.8042 22.414 55H27.586C27.3427 54.8042 27.0303 50.5197 26.787 46.4147C29.8481 46.3527 32.679 46.1243 34.1159 45.7262C35.099 45.4554 36.0689 45.1127 37.0126 44.7048L33.8463 32.938L15.7789 32.9184Z">
                             </path>
                         </svg></a>
-                    <a href="#">Vision</a>
+                    <a href="https://www.therailpark.org/vision/">Vision</a>
                 </div>
-                <a href="#" id="donateBtn">Donate</a>
+                <a href="https://www.therailpark.org/donate/" id="donateBtn">Donate</a>
             </div>
         </div>
     </nav>
+
+    <main class="hamContent">
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Membership</a>
+            <a href="#">Resources</a>
+            <a href="#">News</a>
+            <a href="#">About</a>
+            <a href="#">Book a tour</a>
+            <a href="#">Shop</a>
+        </div>
+        <div>
+            <p>Visit</p>
+            <a href="#">Location</a>
+            <a href="#">Map</a>
+            <a href="#">Events</a>
+            <a href="#">Faqs</a>
+        </div>
+        <div>
+            <p>Vision</p>
+            <a href="#">Progress</a>
+            <a href="#">History</a>
+            <a href="#">Team</a>
+            <a href="#">Donate</a>
+        </div>
+        <div>
+            <article>
+                <h2>Hours & Info</h2>
+                <p>Free and open daily<br>7:00 am - 10:00 pm</p>
+            </article>
+            <article id="entrance">
+                <h2>Entrance</h2>
+                <a href="#">N. Broad &#38; Noble Streets<br>Philadelphia, PA 19123</a>
+            </article>
+            <article>
+                <h2>Follow Along</h2>
+            </article>
+        </div>
+    </main>
+
     <main class="contents">
         <header class="heading">
             <h1>The Rail</h1>
@@ -54,6 +102,7 @@
                     <a href="#">Make a donation today!</a>
                 </h3>
                 <img src="images/campaignHeader.avif" alt="Campaign Header" id="headingImg">
+                <img src="images/hours-badge.svg" alt="Hours Badge" id="hoursBadge">
 
                 <button id="carouselNext">
                     <svg width="54" height="13" viewBox="0 0 54 13" fill="#131313" xmlns="http://www.w3.org/2000/svg">
@@ -62,6 +111,10 @@
                         </path>
                     </svg>
                 </button>
+            </section>
+
+            <section class="mobileCarousel">
+
             </section>
         </div>
     </main>

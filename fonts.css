@@ -24,6 +24,18 @@
 
 @font-face {
     font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-Thin.woff);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
+    src: url(fonts/ArminGrotesk-UltraLight.woff);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Armin Grotesk;
     src: url(fonts/ArminGrotesk-Normal.woff);
     font-weight: normal;
 }
@@ -44,4 +56,16 @@
     font-family: Armin Grotesk;
     src: url(fonts/ArminGrotesk-UltraBold.woff);
     font-weight: bolder;
+}
+
+@font-face {
+    font-family: Mongoose;
+    src: url(fonts/Mongoose/Fontspring-DEMO-mongoose-medium.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Mongoose;
+    src: url(fonts/Mongoose/Fontspring-DEMO-mongoose-bold.otf);
+    font-weight: bold;
 }
