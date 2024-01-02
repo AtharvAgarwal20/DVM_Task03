@@ -495,6 +495,14 @@ main .carousel #carouselBack svg:hover {
     right: 225px;
 }
 
+.contents .gallery .entrances .entranceCard:last-of-type {
+    flex-direction: row-reverse;
+}
+
+.contents .gallery .entrances .entranceCard:first-of-type {
+    padding-top: 8rem;
+}
+
 .contents .gallery .entrances .entranceCard {
     display: flex;
     flex-direction: row;
@@ -502,20 +510,42 @@ main .carousel #carouselBack svg:hover {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10rem;
 }
 
-.contents .gallery .entrances .entranceCard:hover .cardContents svg:first-of-type {
+.contents .gallery .entrances .entranceCard:hover #firstArrow {
     transform: translateX(-10px) rotate(-90deg);
     stroke: #04C75C;
 }
 
-.contents .gallery .entrances .entranceCard .cardContents svg:first-of-type {
+#firstArrow {
     transform: rotate(-90deg);
+}
+
+.contents .gallery .entrances .entranceCard:hover .cardContents svg:last-of-type {
+    transform: translateX(10px) rotate(90deg);
+    stroke: #04C75C;
+}
+
+.contents .gallery .entrances .entranceCard .cardContents svg:last-of-type {
+    transform: rotate(90deg);
 }
 
 .contents .gallery .entrances .entranceCard video {
     width: 436.34px;
     border-radius: 0.5rem;
+}
+
+article.posterImage img {
+    position: absolute;
+    width: 436.34px;
+    border-radius: 0.5rem;
+    opacity: 1;
+    transition: opacity 300ms linear;
+}
+
+.contents .gallery .entrances .entranceCard:hover article.posterImage img {
+    opacity: 0;
 }
 
 .contents .gallery .entrances .entranceCard .cardContents {
@@ -545,7 +575,8 @@ main .carousel #carouselBack svg:hover {
     grid-template-columns: 2fr 2fr 1fr;
 }
 
-#disabilityIcon {
+#disabilityIcon,
+#stairsIcon {
     transform: rotate(0deg);
     transition: fill 150ms linear;
     stroke: none;
@@ -553,7 +584,8 @@ main .carousel #carouselBack svg:hover {
     margin-bottom: auto;
 }
 
-#disabilityIcon:hover {
+#disabilityIcon:hover,
+#stairsIcon:hover {
     cursor: pointer;
     fill: #04C75C;
 }

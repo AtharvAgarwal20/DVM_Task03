@@ -20,6 +20,7 @@ const headingImg = document.querySelector('#headingImg')
 const hoursBadge = document.querySelector('#hoursBadge')
 const carouselHeading = document.querySelector('.carouselHeading')
 const entrancesHeading = document.querySelectorAll('.contents .gallery .entrances h3')
+const entranceSection = document.querySelector('.entrances')
 const videos = document.querySelectorAll('video')
 const entranceCard = document.querySelectorAll('.entranceCard')
 const entranceCardArray = Array.from(entranceCard)
@@ -49,7 +50,6 @@ function parallax() {
     }
 
     heading.style.marginTop = `-${scrollValue / 1.25}px`
-
     gallery.style.marginTop = `-${scrollValue}px`
 }
 
