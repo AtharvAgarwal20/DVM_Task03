@@ -19,6 +19,7 @@ const carouselBack = document.querySelector('#carouselBack')
 const headingImg = document.querySelector('#headingImg')
 const hoursBadge = document.querySelector('#hoursBadge')
 const carouselHeading = document.querySelector('.carouselHeading')
+const entrancesHeading = document.querySelectorAll('.contents .gallery .entrances h3')
 const imageUrls = ['images/campaignHeader.avif', 'images/parkImageCarousel.avif', 'images/greeneryCarousel.avif']
 const carouselHeadingTexts = ['Roots of the Rail Park End-of-Year Fundraiser<br><a href="#">Make a donation today!</a>', 'Phase One is free & open daily<br><a href="#">Plan your visit</a>', 'Turning historic tracks into an unparalleled park.<br><a href="#">See the full version</a>']
 let i = 0
@@ -29,11 +30,18 @@ function parallax() {
     console.log(scrollValue)
 
     if (scrollValue >= 50 && j == 0) {
-        console.log("true");
+        // console.log("true");
         navbar.style.transform = "translateY(-135px)";
     }
     else {
         navbar.style.transform = "translateY(0px)"
+    }
+
+    if (entrancesHeading[0].hasAttribute('style') && scrollValue >= 319) {
+        entrancesHeading[0].removeAttribute('style')
+        setTimeout(() => {
+            entrancesHeading[1].removeAttribute('style')
+        }, 150)
     }
 
     heading.style.marginTop = `-${scrollValue / 1.25}px`
