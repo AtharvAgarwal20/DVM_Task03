@@ -20,6 +20,10 @@ const headingImg = document.querySelector('#headingImg')
 const hoursBadge = document.querySelector('#hoursBadge')
 const carouselHeading = document.querySelector('.carouselHeading')
 const entrancesHeading = document.querySelectorAll('.contents .gallery .entrances h3')
+const videos = document.querySelectorAll('video')
+const entranceCard = document.querySelectorAll('.entranceCard')
+const entranceCardArray = Array.from(entranceCard)
+// Array of entrace cards is needed since indexOf method does not work on NodeList
 const imageUrls = ['images/campaignHeader.avif', 'images/parkImageCarousel.avif', 'images/greeneryCarousel.avif']
 const carouselHeadingTexts = ['Roots of the Rail Park End-of-Year Fundraiser<br><a href="#">Make a donation today!</a>', 'Phase One is free & open daily<br><a href="#">Plan your visit</a>', 'Turning historic tracks into an unparalleled park.<br><a href="#">See the full version</a>']
 let i = 0
@@ -166,3 +170,13 @@ window.addEventListener('scroll', parallax)
 ham.addEventListener('click', hamburgerMenuHelper)
 carouselNext.addEventListener('click', next)
 carouselBack.addEventListener('click', back)
+entranceCard.forEach(card => {
+    let video = videos[entranceCardArray.indexOf(card)]
+    card.addEventListener('mouseenter', () => {
+        video.play()
+    })
+    card.addEventListener('mouseleave', () => {
+        video.pause()
+        video.currentTime = 0
+    })
+})

@@ -362,6 +362,7 @@ main .gallery {
 
 /* CAROUSEL */
 main .carousel {
+    width: 100vw;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 2fr 4fr 1fr;
@@ -476,6 +477,7 @@ main .carousel #carouselBack svg:hover {
 /* ENTRANCES SECTION */
 .contents .gallery .entrances {
     margin-top: 8rem;
+    width: 100vw;
 }
 
 .contents .gallery .entrances h3 {
@@ -491,4 +493,88 @@ main .carousel #carouselBack svg:hover {
 
 .contents .gallery .entrances h3:first-of-type {
     right: 225px;
+}
+
+.contents .gallery .entrances .entranceCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contents .gallery .entrances .entranceCard:hover .cardContents svg:first-of-type {
+    transform: translateX(-10px) rotate(-90deg);
+    stroke: #04C75C;
+}
+
+.contents .gallery .entrances .entranceCard .cardContents svg:first-of-type {
+    transform: rotate(-90deg);
+}
+
+.contents .gallery .entrances .entranceCard video {
+    width: 436.34px;
+    border-radius: 0.5rem;
+}
+
+.contents .gallery .entrances .entranceCard .cardContents {
+    width: 40vw;
+    display: grid;
+    grid-template-rows: 2fr 6fr 1fr;
+    padding-left: 30px;
+}
+
+.contents .gallery .entrances .entranceCard .cardContents svg {
+    stroke: #131313;
+    transition: transform 150ms linear, stroke 150ms linear;
+}
+
+.cardContents h4 {
+    font-family: RailPark, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.1rem;
+    font-size: 3.16251963351vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contents .gallery .entrances .entranceCard .cardContents span {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+#disabilityIcon {
+    transform: rotate(0deg);
+    transition: fill 150ms linear;
+    stroke: none;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#disabilityIcon:hover {
+    cursor: pointer;
+    fill: #04C75C;
+}
+
+.cardContents a {
+    color: black;
+    text-decoration: none;
+    transition: color 150ms linear;
+    margin-top: auto;
+    font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.cardContents a:hover {
+    color: #04C75C;
+}
+
+.cardContents p {
+    margin-top: auto;
+    font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
 }
