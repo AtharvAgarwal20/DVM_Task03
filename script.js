@@ -24,7 +24,7 @@ const entranceSection = document.querySelector('.entrances')
 const videos = document.querySelectorAll('video')
 const entranceCard = document.querySelectorAll('.entranceCard')
 const entranceCardArray = Array.from(entranceCard)
-const hoveringVideo = document.querySelector('.hoveringVideo h3 span:nth-of-type(2)')
+const hoveringVideo = document.querySelectorAll('.hoveringVideo h3 span')
 // Array of entrace cards is needed since indexOf method does not work on NodeList
 const imageUrls = ['images/campaignHeader.avif', 'images/parkImageCarousel.avif', 'images/greeneryCarousel.avif']
 const carouselHeadingTexts = ['Roots of the Rail Park End-of-Year Fundraiser<br><a href="#">Make a donation today!</a>', 'Phase One is free & open daily<br><a href="#">Plan your visit</a>', 'Turning historic tracks into an unparalleled park.<br><a href="#">See the full version</a>']
@@ -48,6 +48,19 @@ function parallax() {
         setTimeout(() => {
             entrancesHeading[1].removeAttribute('style')
         }, 150)
+    }
+
+    if (hoveringVideo[0].hasAttribute('style') && scrollValue >= 1317) {
+        hoveringVideo[0].removeAttribute('style')
+        setTimeout(() => {
+            hoveringVideo[1].removeAttribute('style')
+        }, 100)
+        setTimeout(() => {
+            hoveringVideo[2].removeAttribute('style')
+        }, 200)
+        setTimeout(() => {
+            hoveringVideo[3].removeAttribute('style')
+        }, 300)
     }
 
     heading.style.marginTop = `-${scrollValue / 1.25}px`
@@ -191,12 +204,12 @@ entranceCard.forEach(card => {
         video.currentTime = 0
     })
 })
-hoveringVideo.addEventListener('mousemove', cursorVideo)
-hoveringVideo.addEventListener('mouseenter', () => {
+hoveringVideo[1].addEventListener('mousemove', cursorVideo)
+hoveringVideo[1].addEventListener('mouseenter', () => {
     videos[2].play()
     videos[2].style.opacity = '1'
 })
-hoveringVideo.addEventListener('mouseleave', () => {
+hoveringVideo[1].addEventListener('mouseleave', () => {
     videos[2].pause()
     videos[2].currentTime = 0
     videos[2].style.opacity = '0'

@@ -638,10 +638,12 @@ article.posterImage img {
     color: #04C75C;
 }
 
-/* .hoveringVideo h3 span {
+.hoveringVideo h3 span {
     display: block;
-    transform: translateY(10px);
-} */
+    transform: translateY(0px);
+    opacity: 1;
+    transition: opacity 700ms linear, transform 700ms ease-in-out;
+}
 
 .hoveringVideo video {
     opacity: 0;
@@ -651,4 +653,10 @@ article.posterImage img {
     transition: left 200ms ease-out, top 200ms ease-out, opacity 300ms linear;
     width: 40vw;
     border-radius: 0.5rem;
+}
+
+.hoveringVideo h3 p {
+    font-weight: 200;
+    letter-spacing: normal;
+    font-size: 30px;
 }
