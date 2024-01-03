@@ -25,6 +25,10 @@ const videos = document.querySelectorAll('video')
 const entranceCard = document.querySelectorAll('.entranceCard')
 const entranceCardArray = Array.from(entranceCard)
 const hoveringVideo = document.querySelectorAll('.hoveringVideo h3 span')
+const floatingGallery = document.querySelector('#floatingGallery')
+const floatingGalleryVideos = document.querySelectorAll('#floatingGallery video')
+const floatingGalleryNames = document.querySelectorAll('.names')
+const futureVision = document.querySelector('#futureVision')
 // Array of entrace cards is needed since indexOf method does not work on NodeList
 const imageUrls = ['images/campaignHeader.avif', 'images/parkImageCarousel.avif', 'images/greeneryCarousel.avif']
 const carouselHeadingTexts = ['Roots of the Rail Park End-of-Year Fundraiser<br><a href="#">Make a donation today!</a>', 'Phase One is free & open daily<br><a href="#">Plan your visit</a>', 'Turning historic tracks into an unparalleled park.<br><a href="#">See the full version</a>']
@@ -62,6 +66,12 @@ function parallax() {
             hoveringVideo[3].removeAttribute('style')
         }, 300)
     }
+
+    floatingGalleryNames.forEach(floatingName => {
+        floatingName.style.marginTop = `${(scrollValue - 1750) / 10}px`
+    })
+
+    futureVision.style.marginTop = `${(scrollValue - 2300) / 5}px`
 
     heading.style.marginTop = `-${scrollValue / 1.25}px`
     gallery.style.marginTop = `-${scrollValue}px`
@@ -214,5 +224,25 @@ hoveringVideo[1].addEventListener('mouseleave', () => {
     videos[2].currentTime = 0
     videos[2].style.opacity = '0'
 })
+floatingGalleryVideos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        video.play()
+    })
+    video.addEventListener('mouseleave', () => {
+        video.pause()
+        video.currentTime = 0
+    })
+})
+
+// window.addEventListener('load', () => {
+//     floatingGallery.style.top = `${document.querySelector('.hoveringVideo h3').offsetHeight}px`
+//     console.log('loaded')
+//     console.log(`${document.querySelector('.hoveringVideo h3').offsetHeight}`)
+// })
+// window.addEventListener('resize', () => {
+//     floatingGallery.style.top = `${document.querySelector('.hoveringVideo h3').offsetHeight}px`
+//     console.log('loaded')
+//     console.log(`${document.querySelector('.hoveringVideo h3').offsetHeight}`)
+// })
 
 // 407.0375051035
