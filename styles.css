@@ -9,6 +9,7 @@
 
 body {
     font-family: RailPark, Arial, Helvetica, sans-serif;
+    background-color: #FAF9F7;
     transition: background-color 150ms linear;
 }
 
@@ -609,4 +610,45 @@ article.posterImage img {
     font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 200;
+}
+
+
+
+/* PARALLAX 2 */
+.hoveringVideo {
+    margin-top: 8rem;
+    z-index: 99;
+}
+
+.hoveringVideo h3 {
+    font-size: 5vw;
+    font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
+    letter-spacing: -0.1rem;
+    font-weight: bold;
+    position: absolute;
+    line-height: 5rem;
+    left: 9rem;
+}
+
+.hoveringVideo h3:hover {
+    cursor: default;
+}
+
+.hoveringVideo h3 span:nth-of-type(2) {
+    color: #04C75C;
+}
+
+/* .hoveringVideo h3 span {
+    display: block;
+    transform: translateY(10px);
+} */
+
+.hoveringVideo video {
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    transition: left 200ms ease-out, top 200ms ease-out, opacity 300ms linear;
+    width: 40vw;
+    border-radius: 0.5rem;
 }

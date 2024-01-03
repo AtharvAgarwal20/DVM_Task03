@@ -24,6 +24,7 @@ const entranceSection = document.querySelector('.entrances')
 const videos = document.querySelectorAll('video')
 const entranceCard = document.querySelectorAll('.entranceCard')
 const entranceCardArray = Array.from(entranceCard)
+const hoveringVideo = document.querySelector('.hoveringVideo h3 span:nth-of-type(2)')
 // Array of entrace cards is needed since indexOf method does not work on NodeList
 const imageUrls = ['images/campaignHeader.avif', 'images/parkImageCarousel.avif', 'images/greeneryCarousel.avif']
 const carouselHeadingTexts = ['Roots of the Rail Park End-of-Year Fundraiser<br><a href="#">Make a donation today!</a>', 'Phase One is free & open daily<br><a href="#">Plan your visit</a>', 'Turning historic tracks into an unparalleled park.<br><a href="#">See the full version</a>']
@@ -166,6 +167,16 @@ function back() {
     carouselTextChange(carouselHeading)
 }
 
+function cursorVideo(e) {
+    // videos[2].style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+    videos[2].style.left = `${e.clientX}px`
+    videos[2].style.top = `${e.clientY}px`
+    console.log(e.clientX)
+    console.log(e.clientY)
+    let rect = videos[2].getBoundingClientRect()
+    console.log(rect.top, rect.right)
+}
+
 window.addEventListener('scroll', parallax)
 ham.addEventListener('click', hamburgerMenuHelper)
 carouselNext.addEventListener('click', next)
@@ -180,3 +191,15 @@ entranceCard.forEach(card => {
         video.currentTime = 0
     })
 })
+hoveringVideo.addEventListener('mousemove', cursorVideo)
+hoveringVideo.addEventListener('mouseenter', () => {
+    videos[2].play()
+    videos[2].style.opacity = '1'
+})
+hoveringVideo.addEventListener('mouseleave', () => {
+    videos[2].pause()
+    videos[2].currentTime = 0
+    videos[2].style.opacity = '0'
+})
+
+// 407.0375051035
