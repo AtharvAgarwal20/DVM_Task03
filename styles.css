@@ -888,6 +888,24 @@ h4.names:nth-of-type(3) {
     grid-column-end: 7;
 }
 
+@media(max-width: 1098px) {
+    .tunnel {
+        grid-column-start: 4;
+    }
+
+    #futureVision {
+        font-size: 20px;
+        grid-column-start: 1;
+    }
+}
+
+@media(max-width: 970px) {
+
+    #futureVision,
+    #futureVision a {
+        font-size: 17px;
+    }
+}
 
 
 /* FOOTER */
@@ -941,6 +959,10 @@ h4.names:nth-of-type(3) {
 
 #newsLetter form input:focus::placeholder {
     color: #0EB559;
+}
+
+#newsLetter form input:focus #newsLetter form button svg {
+    stroke: black;
 }
 
 #newsLetter form button {
@@ -1032,4 +1054,34 @@ h4.names:nth-of-type(3) {
 #footer2 section:nth-of-type(6) {
     margin-left: auto;
     margin-right: auto;
+}
+
+@media(max-width: 980px) {
+
+    #footer2 section:nth-of-type(2),
+    #footer2 section:nth-of-type(4),
+    #footer2 section:nth-of-type(5),
+    #footer2 section:nth-of-type(7) {
+        display: none;
+    }
+
+    #footer2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+
+    #footer2 section:nth-of-type(8) {
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #footer2 section:nth-of-type(6) {
+        grid-row-start: 5;
+        grid-row-end: 6;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
 }
