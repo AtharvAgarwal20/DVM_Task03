@@ -20,7 +20,8 @@ body {
     right: 0px;
     left: 0px;
     position: fixed;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgba(250, 249, 247, 0.97);
     max-width: 100%;
     padding: 0px 4.8rem;
     transition: transform 300ms ease-in-out, background-color 150ms linear, border-bottom 150ms linear;
@@ -337,7 +338,7 @@ main {
     position: relative;
     top: 135px;
     width: 100%;
-    height: 10000px;
+    /* height: 10000px; */
 }
 
 main .heading {
@@ -391,8 +392,18 @@ main .carousel h3 a {
     transition: color 150ms ease-in-out;
 }
 
+main .carousel h3 a:hover::after {
+    margin-left: 21px;
+}
+
 main .carousel h3 a:hover {
     color: #131313;
+}
+
+main .carousel h3 a::after {
+    content: "→";
+    margin-left: 16px;
+    transition: margin-left 150ms linear;
 }
 
 main .carousel #headingImg {
@@ -620,6 +631,7 @@ article.posterImage img {
 
 .cardContents a {
     color: black;
+    display: block;
     text-decoration: none;
     transition: color 150ms linear;
     margin-top: auto;
@@ -630,6 +642,17 @@ article.posterImage img {
 
 .cardContents a:hover {
     color: #04C75C;
+}
+
+.cardContents a::after {
+    content: "↗";
+    margin-left: 5px;
+    transition: margin-left 150ms linear, margin-top 150ms linear;
+}
+
+.cardContents a:hover::after {
+    margin-left: calc(5px + 5px);
+    padding-top: -10px;
 }
 
 .cardContents p {
@@ -801,6 +824,30 @@ h4.names:nth-of-type(3) {
     display: block;
 }
 
+/* .viaduct img {
+    max-width: calc((4*100/12)*1%);
+    aspect-ratio: 0.8;
+}
+
+.viaduct img,
+.cut img,
+.tunnel img {
+    border-radius: 0.5rem;
+    overflow: clip;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 300ms linear;
+}
+
+.viaduct img:hover,
+.cut img:hover,
+.tunnel img:hover {
+    opacity: 0;
+} */
+
 #viaduct {
     aspect-ratio: 0.8;
 }
@@ -834,4 +881,76 @@ h4.names:nth-of-type(3) {
     grid-row-end: 5;
     grid-column-start: 5;
     grid-column-end: 7;
+}
+
+
+
+/* FOOTER */
+#newsLetter {
+    background-color: #0CEE72;
+    position: relative;
+    height: 297.6px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#newsLetter form {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #00B451;
+    z-index: inherit;
+    width: 680px;
+    transition: border-bottom 150ms linear;
+}
+
+#newsLetter h5 {
+    font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+#newsLetter form input {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    z-index: inherit;
+    padding: 8px 0px;
+    width: 100%;
+}
+
+#newsLetter form input::placeholder {
+    font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    transition: color 150ms linear;
+    color: #108042;
+}
+
+#newsLetter form input:focus {
+    outline: none;
+}
+
+#newsLetter form input:focus::placeholder {
+    color: #0EB559;
+}
+
+#newsLetter form button {
+    background-color: transparent;
+    border: none;
+    transition: transform 150ms linear;
+}
+
+#newsLetter form button:hover {
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+#newsLetter form button svg {
+    stroke: #108042;
+    transform: rotate(90deg);
+    padding: 8px 0px;
 }

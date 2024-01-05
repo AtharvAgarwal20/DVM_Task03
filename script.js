@@ -24,16 +24,34 @@ const entranceSection = document.querySelector('.entrances')
 const videos = document.querySelectorAll('video')
 const entranceCard = document.querySelectorAll('.entranceCard')
 const entranceCardArray = Array.from(entranceCard)
+// Array of entrace cards is needed since indexOf method does not work on NodeList
 const hoveringVideo = document.querySelectorAll('.hoveringVideo h3 span')
 const floatingGallery = document.querySelector('#floatingGallery')
 const floatingGalleryVideos = document.querySelectorAll('#floatingGallery video')
 const floatingGalleryNames = document.querySelectorAll('.names')
 const futureVision = document.querySelector('#futureVision')
-// Array of entrace cards is needed since indexOf method does not work on NodeList
+const footer = document.querySelectorAll('footer')
+const newsLetterForm = document.querySelector('#newsLetter form')
+const newsLetter = document.querySelector('#newsLetter form input')
+const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const imageUrls = ['images/campaignHeader.avif', 'images/parkImageCarousel.avif', 'images/greeneryCarousel.avif']
 const carouselHeadingTexts = ['Roots of the Rail Park End-of-Year Fundraiser<br><a href="#">Make a donation today!</a>', 'Phase One is free & open daily<br><a href="#">Plan your visit</a>', 'Turning historic tracks into an unparalleled park.<br><a href="#">See the full version</a>']
 let i = 0
 let j = 0
+
+function isEmailValid(emailID) {
+    return (emailID.match(emailRegex) !== null);
+}
+
+function formSubmit(e) {
+    e.preventDefault()
+    if (isEmailValid(newsLetter.value.trim())) {
+        footer[0].innerHTML = '<h5>Thank you for subscribing!</h5>'
+    }
+    else {
+        footer[0].innerHTML = '<h5>The email you entered is not valid</h5>'
+    }
+}
 
 function parallax() {
     let scrollValue = window.scrollY;
@@ -84,6 +102,7 @@ function hamburgerMenuHelper() {
         hamUpper.classList.add('hamCross')
         hamLower.classList.add('hamCross')
         mainPage.style.display = 'none'
+        footer[0].style.display = 'none'
         body.style.backgroundColor = '#131313'
         navLinks.style.display = 'none'
         donateBtn.id = 'donateBtnHam'
@@ -115,7 +134,7 @@ function hamburgerMenuHelper() {
     else if (j == 1) {
         hamUpper.removeAttribute('style')
         hamLower.removeAttribute('style')
-        mainPage.removeAttribute('style')
+        mainPage.style.display = 'block'
         body.removeAttribute('style')
         navLinks.removeAttribute('style')
         navSearch.removeAttribute('style')
@@ -127,6 +146,7 @@ function hamburgerMenuHelper() {
         contentFourth.removeAttribute('style')
         hamUpper.classList.remove('hamCross')
         hamLower.classList.remove('hamCross')
+        footer[0].removeAttribute('style')
         donateBtn.id = 'donateBtn'
         j -= 1
     }
@@ -201,6 +221,13 @@ function cursorVideo(e) {
 }
 
 window.addEventListener('scroll', parallax)
+window.addEventListener('load', () => {
+    mainPage.style.height = `calc(${videos[5].getBoundingClientRect().bottom}px + 22rem)`
+})
+window.addEventListener('resize', () => {
+    mainPage.style.height = `calc(${videos[5].getBoundingClientRect().bottom}px + 22rem)`
+    console.log('resize')
+})
 ham.addEventListener('click', hamburgerMenuHelper)
 carouselNext.addEventListener('click', next)
 carouselBack.addEventListener('click', back)
@@ -234,15 +261,11 @@ floatingGalleryVideos.forEach(video => {
     })
 })
 
-// window.addEventListener('load', () => {
-//     floatingGallery.style.top = `${document.querySelector('.hoveringVideo h3').offsetHeight}px`
-//     console.log('loaded')
-//     console.log(`${document.querySelector('.hoveringVideo h3').offsetHeight}`)
-// })
-// window.addEventListener('resize', () => {
-//     floatingGallery.style.top = `${document.querySelector('.hoveringVideo h3').offsetHeight}px`
-//     console.log('loaded')
-//     console.log(`${document.querySelector('.hoveringVideo h3').offsetHeight}`)
-// })
+newsLetter.addEventListener('focus', () => {
+    document.querySelector('#newsLetter form').style.borderBottom = '1px solid #112118'
+})
+newsLetter.addEventListener('focusout', () => {
+    document.querySelector('#newsLetter form').removeAttribute('style')
+})
 
-// 407.0375051035
+newsLetterForm.addEventListener('submit', formSubmit)
