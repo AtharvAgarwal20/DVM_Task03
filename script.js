@@ -109,6 +109,7 @@ function hamburgerMenuHelper() {
         navbar.style.borderBottom = '0.5px solid #424242'
         navbar.style.backgroundColor = '#131313'
         navSearch.style.display = 'flex'
+        footer[1].style.display = 'none'
         setTimeout(() => {
             navSearch.style.opacity = '1'
         }, 150)
@@ -147,6 +148,7 @@ function hamburgerMenuHelper() {
         hamUpper.classList.remove('hamCross')
         hamLower.classList.remove('hamCross')
         footer[0].removeAttribute('style')
+        footer[1].removeAttribute('style')
         donateBtn.id = 'donateBtn'
         j -= 1
     }

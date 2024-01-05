@@ -276,6 +276,10 @@ body {
     margin-top: 0px;
 }
 
+#timings {
+    font-size: 1.953125vw;
+}
+
 .hamContent div:nth-of-type(4) h2 {
     font-size: 1rem;
     margin-bottom: 45px;
@@ -415,12 +419,12 @@ main .carousel #headingImg {
     right: 8vw;
     top: 1.953125vw;
     width: 8.519003931847969vw;
-    animation: hoursBadgeSpin 30s linear 0s infinite;
+    animation: Spin 30s linear 0s infinite;
     opacity: 0;
     transition: opacity 300ms linear;
 }
 
-@keyframes hoursBadgeSpin {
+@keyframes Spin {
     from {
         transform: rotate(0deg);
     }
@@ -509,6 +513,19 @@ main .mobileCarousel {
     .navbar .navContainer {
         display: block;
     }
+}
+
+
+
+/* CAROUSEL-MOBILE */
+.mobileCarousel {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mobileCarousel img {
+    width: 100%;
 }
 
 
@@ -680,6 +697,18 @@ article.posterImage img {
     left: 9rem;
 }
 
+@media(max-width: 1235.2px) {
+    .hoveringVideo h3 {
+        line-height: 3.8rem;
+    }
+}
+
+@media(max-width: 904px) {
+    .hoveringVideo h3 {
+        line-height: 3rem;
+    }
+}
+
 .hoveringVideo h3:hover {
     cursor: default;
 }
@@ -824,30 +853,6 @@ h4.names:nth-of-type(3) {
     display: block;
 }
 
-/* .viaduct img {
-    max-width: calc((4*100/12)*1%);
-    aspect-ratio: 0.8;
-}
-
-.viaduct img,
-.cut img,
-.tunnel img {
-    border-radius: 0.5rem;
-    overflow: clip;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    position: absolute;
-    opacity: 1;
-    transition: opacity 300ms linear;
-}
-
-.viaduct img:hover,
-.cut img:hover,
-.tunnel img:hover {
-    opacity: 0;
-} */
-
 #viaduct {
     aspect-ratio: 0.8;
 }
@@ -953,4 +958,78 @@ h4.names:nth-of-type(3) {
     stroke: #108042;
     transform: rotate(90deg);
     padding: 8px 0px;
+}
+
+
+
+/* FOOTER 2 */
+#footer2 {
+    background-color: #141214;
+    height: 35rem;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#footer2 a {
+    color: white;
+    text-decoration: none;
+    transition: color 150ms linear;
+    font-size: 1.953125vw;
+}
+
+#footer2 p {
+    font-size: 1.953125vw;
+}
+
+#footer2 a:hover {
+    color: #04C75C;
+}
+
+#footer2 svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    transition: fill 150ms linear;
+}
+
+#donateCoin video {
+    width: 180px;
+    height: 180px;
+}
+
+#donateCoin svg {
+    width: 239px;
+    height: 239px;
+    position: absolute;
+    animation: Spin 30s linear 0s infinite;
+    cursor: pointer;
+}
+
+#donateCoin {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer2 section:nth-of-type(1),
+#footer2 section:nth-of-type(2),
+#footer2 section:nth-of-type(3) {
+    margin-top: auto;
+}
+
+#footer2 section:nth-of-type(4),
+#footer2 section:nth-of-type(5) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#footer2 section:nth-of-type(6) {
+    margin-left: auto;
+    margin-right: auto;
 }
