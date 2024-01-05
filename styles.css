@@ -679,6 +679,47 @@ article.posterImage img {
     font-weight: 200;
 }
 
+@media(max-width: 980px) {
+    .contents .gallery .entrances .entranceCard:last-of-type {
+        flex-direction: column;
+    }
+
+    .contents .gallery .entrances .entranceCard {
+        width: 95vw;
+        flex-direction: column;
+    }
+
+    .contents .gallery .entrances .entranceCard img {
+        width: 95vw;
+    }
+
+    .contents .gallery .entrances .entranceCard video {
+        width: 100%;
+    }
+
+    .contents .gallery .entrances .entranceCard .cardContents {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .contents .gallery .entrances .entranceCard .cardContents span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contents .gallery .entrances .entranceCard .cardContents svg {
+        transform: rotate(0deg) !important;
+        padding-top: 10px;
+        transition: transform 150ms linear, color 150ms linear;
+    }
+
+    .contents .gallery .entrances .entranceCard:hover .cardContents #firstArrow,
+    .contents .gallery .entrances .entranceCard:hover .cardContents #secondArrow {
+        transform: translateY(-5px) !important;
+    }
+}
+
 
 
 /* PARALLAX 2 */

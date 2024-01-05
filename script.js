@@ -85,11 +85,21 @@ function parallax() {
         }, 300)
     }
 
-    floatingGalleryNames.forEach(floatingName => {
-        floatingName.style.marginTop = `${(scrollValue - 1750) / 10}px`
-    })
+    if (window.innerWidth > 980) {
+        floatingGalleryNames.forEach(floatingName => {
+            floatingName.style.marginTop = `${(scrollValue - 1750) / 10}px`
+        })
 
-    futureVision.style.marginTop = `${(scrollValue - 2300) / 5}px`
+        futureVision.style.marginTop = `${(scrollValue - 2300) / 5}px`
+    }
+    else if (window.innerWidth <= 980) {
+        floatingGalleryNames.forEach(floatingName => {
+            floatingName.style.marginTop = `${(scrollValue - 2900) / 10}px`
+        })
+
+        futureVision.style.marginTop = `${(scrollValue - 3350) / 5}px`
+    }
+
 
     heading.style.marginTop = `-${scrollValue / 1.25}px`
     gallery.style.marginTop = `-${scrollValue}px`
@@ -228,6 +238,7 @@ window.addEventListener('load', () => {
 })
 window.addEventListener('resize', () => {
     mainPage.style.height = `calc(${videos[5].getBoundingClientRect().bottom}px + 22rem)`
+    location.reload()
     console.log('resize')
 })
 ham.addEventListener('click', hamburgerMenuHelper)
