@@ -221,7 +221,8 @@ body {
 }
 
 .hamContent div:first-of-type a {
-    font-size: 1.302083333333333vw;
+    /* font-size: 1.302083333333333vw; */
+    font-size: 20px;
     font-family: Armin Grotesk, Arial, Helvetica, sans-serif;
     font-weight: 200;
     letter-spacing: 0;
@@ -479,9 +480,9 @@ main .mobileCarousel {
         display: none;
     }
 
-    main .mobileCarousel {
+    /* main .mobileCarousel {
         display: block;
-    }
+    } */
 
     .hamContent {
         grid-template-columns: 1fr 1fr 1fr;
@@ -747,6 +748,12 @@ article.posterImage img {
 @media(max-width: 904px) {
     .hoveringVideo h3 {
         line-height: 3rem;
+    }
+}
+
+@media(max-width: 615px) {
+    .hoveringVideo h3 {
+        line-height: 2rem;
     }
 }
 
