@@ -413,6 +413,8 @@ main .carousel h3 a::after {
 
 main .carousel #headingImg {
     width: 100%;
+    aspect-ratio: calc(800/548);
+    object-fit: cover;
 }
 
 #hoursBadge {
@@ -437,20 +439,26 @@ main .carousel #headingImg {
 
 main .carousel .imgFadeOut {
     transform-origin: 100% 250%;
-    transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
-    transform: rotate(-20deg);
+    transition: transform 600ms cubic-bezier(0.65, 0, 0.35, 1) 100ms, opacity 600ms linear 100ms;
+    transform: rotate(-15deg);
     opacity: 0;
 }
 
 main .carousel .imgFadeIn {
     transform-origin: 0% -150%;
-    transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
+    transition: transform 700ms ease-out, opacity 600ms linear;
     transform: rotate(0deg) !important;
     opacity: 1;
 }
 
-main .carousel .carouselHeading {
+main .carousel .carouselHeading a {
     transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
+}
+
+main .carousel .carouselHeading {
+    transition: transform 700ms ease-in-out 100ms, opacity 700ms ease-in-out 100ms;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 main .carousel button svg {

@@ -173,12 +173,12 @@ function carouselImageChange(image) {
         image.style.opacity = "0"
         image.style.transformOrigin = "-100% -150%"
         image.style.transform = "rotate(10deg)"
-    }, 500)
+    }, 750)
     setTimeout(() => {
         image.src = imageUrls[i]
         image.classList.add('imgFadeIn')
         image.style.opacity = "1"
-    }, 700)
+    }, 900)
     if (i == 1) {
         setTimeout(() => {
             hoursBadge.style.opacity = '1'
@@ -196,7 +196,7 @@ function carouselTextChange(headingText) {
         headingText.innerHTML = carouselHeadingTexts[i]
         headingText.style.transform = "translate(0px)"
         headingText.style.opacity = "1"
-    }, 700)
+    }, 900)
 
 }
 
