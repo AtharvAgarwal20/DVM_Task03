@@ -96,12 +96,29 @@ function parallax() {
 
         futureVision.style.marginTop = `${(scrollValue - 2300) / 5}px`
     }
-    else if (window.innerWidth <= 980) {
+    else if (window.innerWidth <= 980 && window.innerWidth > 750) {
         floatingGalleryNames.forEach(floatingName => {
-            floatingName.style.marginTop = `${(scrollValue - 2900) / 10}px`
+            floatingName.style.marginTop = `${(scrollValue - 2100) / 10}px`
         })
 
-        futureVision.style.marginTop = `${(scrollValue - 3350) / 5}px`
+        futureVision.style.marginTop = `${(scrollValue - 2650) / 5}px`
+    }
+    else if (window.innerWidth <= 750 && window.innerWidth > 620) {
+        floatingGalleryNames.forEach(floatingName => {
+            floatingName.style.marginTop = `${(scrollValue - 1800) / 10}px`
+        })
+
+        futureVision.style.marginTop = `${(scrollValue - 2550) / 5}px`
+    }
+    else if (window.innerWidth <= 620) {
+        floatingGalleryNames[0].innerHTML = 'The Viaduct'
+        floatingGalleryNames[1].innerHTML = 'The Cut'
+        floatingGalleryNames[2].innerHTML = 'The Tunnel'
+        // floatingGalleryNames.forEach(floatingName => {
+        //     floatingName.style.marginTop = `${(scrollValue - 2100)}px`
+        // })
+
+        // futureVision.style.marginTop = `${(scrollValue - 2650) / 5}px`
     }
 
 
