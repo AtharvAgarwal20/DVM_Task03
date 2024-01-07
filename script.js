@@ -65,11 +65,15 @@ function parallax() {
         navbar.style.transform = "translateY(0px)"
     }
 
-    if (entrancesHeading[0].hasAttribute('style') && scrollValue >= 319) {
+    if (entrancesHeading[0].hasAttribute('style') && scrollValue >= 319 && window.innerWidth >= 980) {
         entrancesHeading[0].removeAttribute('style')
         setTimeout(() => {
             entrancesHeading[1].removeAttribute('style')
         }, 150)
+    }
+    else if (entrancesHeading[0].hasAttribute('style') && window.innerWidth < 980) {
+        entrancesHeading[0].removeAttribute('style')
+        entrancesHeading[1].removeAttribute('style')
     }
 
     if (hoveringVideo[0].hasAttribute('style') && scrollValue >= 1317) {
